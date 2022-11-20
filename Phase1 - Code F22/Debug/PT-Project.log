@@ -1,0 +1,8 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Output.cpp
+E:\poject phase 1\Phase1 - Code F22\GUI\Output.cpp(218,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\poject phase 1\Phase1 - Code F22\GUI\Output.cpp(220,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\poject phase 1\Phase1 - Code F22\GUI\Output.cpp(222,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\poject phase 1\Phase1 - Code F22\GUI\Output.cpp(247,10): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
+E:\poject phase 1\Phase1 - Code F22\GUI\Output.cpp(265,32): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
+  PT-Project.vcxproj -> E:\poject phase 1\Phase1 - Code F22\Debug\PT Project.exe
