@@ -14,7 +14,8 @@ Output::Output()
 	
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 80;
+	UI.DrawMenuItemWidth = 50;
+	UI.PlayMenuItemWidth = 80;
 	
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
@@ -30,7 +31,7 @@ Output::Output()
 	//Change the title
 	pWind->ChangeTitle("Paint for Kids - Programming Techniques Project");
 	
-	CreateDrawToolBar();
+	CreatePlayToolBar();
 	CreateStatusBar();
 }
 
@@ -80,14 +81,37 @@ void Output::CreateDrawToolBar() const
 	//To control the order of these images in the menu, 
 	//reoder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
+	MenuItemImages[ITM_FIG] = "images\\MenuItems\\Menu_Fig.jpg";
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
+	MenuItemImages[ITM_SQUARE] = "images\\MenuItems\\Menu_Square.jpg";
+	MenuItemImages[ITM_HEX] = "images\\MenuItems\\Menu_Hex.jpg";
+	MenuItemImages[ITM_CIR] = "images\\MenuItems\\Menu_Circ.jpg";
+	MenuItemImages[ITM_DCLR] = "images\\MenuItems\\Menu_Dcolor.jpg";
+	MenuItemImages[ITM_FCLR] = "images\\MenuItems\\Menu_Fcolor.jpg";
+	MenuItemImages[ITM_BLK] = "images\\MenuItems\\Menu_Black.jpg";
+	MenuItemImages[ITM_YEL] = "images\\MenuItems\\Menu_Yellow.jpg";
+	MenuItemImages[ITM_ORNG] = "images\\MenuItems\\Menu_Orange.jpg";
+	MenuItemImages[ITM_RED] = "images\\MenuItems\\Menu_Red.jpg";
+	MenuItemImages[ITM_GRN] = "images\\MenuItems\\Menu_Green.jpg";
+	MenuItemImages[ITM_BLUE] = "images\\MenuItems\\Menu_Blue.jpg";
+	MenuItemImages[ITM_MOVE] = "images\\MenuItems\\Menu_Move.jpg";
+	MenuItemImages[ITM_SLCT] = "images\\MenuItems\\Menu_Select.jpg";
+	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\Menu_Undo.jpg";
+	MenuItemImages[ITM_REDO] = "images\\MenuItems\\Menu_Redo.jpg";
+	MenuItemImages[ITM_CLEAR] = "images\\MenuItems\\Menu_Clear.jpg";
+	MenuItemImages[ITM_STARTREC] = "images\\MenuItems\\Menu_Srec.jpg";
+	MenuItemImages[ITM_STOPREC] = "images\\MenuItems\\Menu_SPrec.jpg";
+	MenuItemImages[ITM_PLAYREC] = "images\\MenuItems\\Menu_Prec.jpg";
+	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\Menu_Save.jpg";	
+	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\Menu_Load.jpg";
+	MenuItemImages[ITM_SWITCHP] = "images\\MenuItems\\Menu_Play.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
 
 	//Draw menu item one image at a time
 	for(int i=0; i<DRAW_ITM_COUNT; i++)
-		pWind->DrawImage(MenuItemImages[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+		pWind->DrawImage(MenuItemImages[i], i*UI.DrawMenuItemWidth, 0, UI.DrawMenuItemWidth, UI.ToolBarHeight);
 
 
 
@@ -101,10 +125,20 @@ void Output::CreateDrawToolBar() const
 void Output::CreatePlayToolBar() const
 {
 	UI.InterfaceMode = MODE_PLAY;
+	string MenuItemImages[PLAY_ITM_COUNT];
+	MenuItemImages[ITM_PH] = "images\\MenuItems\\Menu_PH.jpg";
+	MenuItemImages[ITM_PHT] = "images\\MenuItems\\Menu_PHT.jpg";
+	MenuItemImages[ITM_PHC] = "images\\MenuItems\\Menu_PHC.jpg";
+	MenuItemImages[ITM_PHB] = "images\\MenuItems\\Menu_Fig.jpg";
+	MenuItemImages[ITM_SWITCHD] = "images\\MenuItems\\Menu_Draw.jpg";
 	///TODO: write code to create Play mode menu
+	for(int i=0; i<PLAY_ITM_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i*UI.PlayMenuItemWidth, 0, UI.PlayMenuItemWidth, UI.ToolBarHeight);
+
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);	
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-
 void Output::ClearDrawArea() const
 {
 	pWind->SetPen(UI.BkGrndColor, 1);

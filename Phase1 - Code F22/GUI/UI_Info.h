@@ -17,12 +17,33 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 {
 	//Note: Items are **(ordered)** here as they appear in menu
 	//If you want to change the menu items order, change the order here
-	ITM_RECT,		//Recangle item in menu
-	
+	ITM_FIG,
+	ITM_RECT,//Recangle item in menu
+	ITM_SQUARE,
+	ITM_HEX,
+	ITM_CIR,
+	ITM_DCLR,
+	ITM_FCLR,
+	ITM_BLK,
+	ITM_YEL,
+	ITM_ORNG,
+	ITM_RED,
+	ITM_GRN,
+	ITM_BLUE,
+	ITM_MOVE,
+	ITM_SLCT,
+	ITM_UNDO,
+	ITM_REDO,
+	ITM_CLEAR,
+	ITM_STARTREC,
+	ITM_STOPREC,
+	ITM_PLAYREC,
+	ITM_SAVE,
+	ITM_LOAD,
+	ITM_SWITCHP,
 	//TODO: Add more items names here
 
 	ITM_EXIT,		//Exit item
-	
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
 };
@@ -33,6 +54,11 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 	//If you want to change the menu items order, change the order here
 	
 	//TODO: Add more items names here
+	ITM_PH,
+	ITM_PHT,
+	ITM_PHC,
+	ITM_PHB,
+	ITM_SWITCHD,
 
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
@@ -52,8 +78,8 @@ struct UI_Info	//User Interface Info.
 		wx , wy,			//Window starting coordinates
 		StatusBarHeight,	//Status Bar Height
 		ToolBarHeight,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
-		MenuItemWidth;		//Width of each item in toolbar menu
-	
+		DrawMenuItemWidth,		//Width of each item in toolbar menu
+		PlayMenuItemWidth;
 
 	color DrawColor;		//Drawing color
 	color FillColor;		//Filling color
