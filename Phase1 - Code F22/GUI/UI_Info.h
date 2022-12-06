@@ -22,6 +22,7 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_SQUARE,
 	ITM_HEX,
 	ITM_CIR,
+	Itm_TRG,
 	ITM_DCLR,
 	ITM_FCLR,
 	ITM_BLK,

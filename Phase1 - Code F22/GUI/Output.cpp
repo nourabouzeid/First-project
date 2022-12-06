@@ -31,7 +31,7 @@ Output::Output()
 	//Change the title
 	pWind->ChangeTitle("Paint for Kids - Programming Techniques Project");
 	
-	CreatePlayToolBar();
+	CreateDrawToolBar();
 	CreateStatusBar();
 }
 
@@ -124,6 +124,7 @@ void Output::CreateDrawToolBar() const
 
 void Output::CreatePlayToolBar() const
 {
+	ClearToolBar();
 	UI.InterfaceMode = MODE_PLAY;
 	string MenuItemImages[PLAY_ITM_COUNT];
 	MenuItemImages[ITM_PH] = "images\\MenuItems\\Menu_PH.jpg";
@@ -147,7 +148,12 @@ void Output::ClearDrawArea() const
 	
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-
+void Output::ClearToolBar() const
+{
+	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+}
 void Output::PrintMessage(string msg) const	//Prints a message on status bar
 {
 	ClearStatusBar();	//First clear the status bar

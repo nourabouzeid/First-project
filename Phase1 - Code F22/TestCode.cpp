@@ -281,6 +281,89 @@ int main()
 		case DRAW_RECT:
 				pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
 				break;
+		case DRAW_SQUARE:
+				pOut->PrintMessage("Action: Draw a Square , Click on the centre ");
+				break;
+
+		case DRAW_HEXA:
+				pOut->PrintMessage("Action: Draw a Hexagon , Click on the centre");
+				break;
+
+		case DRAW_CIRCLE:
+			pOut->PrintMessage("Action: Draw a Circle , Click on the centre");
+				break;
+		case DRAW_TRIANGLE:
+				pOut->PrintMessage("Action: Draw a Triangle , Click on three points");
+				break;
+		case DRAW_COLOR:
+				pOut->PrintMessage("Action: choose  the drawing color");
+				break;
+		case FILL_COLOR:
+				pOut->PrintMessage("Action: choose the filling color");
+				break;
+		case BLACK_COLOR:
+				pOut->PrintMessage("Action: Color black has been chosen");
+				break;
+
+		case YELLOW_COLOR:
+				pOut->PrintMessage("Action: Color yellow has been chosen");
+				break;
+
+		case ORANGE_COLOR:
+				pOut->PrintMessage("Action: Color black has been chosen");
+				break;
+
+		case RED_COLOR:
+				pOut->PrintMessage("Action: Color black has been chosen");
+				break;
+
+		case GREEN_COLOR:
+				pOut->PrintMessage("Action: Color black has been chosen");
+				break;
+
+		case BLUE_COLOR:
+				pOut->PrintMessage("Action: Color black has been chosen");
+				break;
+
+		case MOVE:
+				pOut->PrintMessage("Action: Move");
+				break;
+
+		case SELECT:
+				pOut->PrintMessage("Action: Select");
+				break;
+
+		case UNDO:
+				pOut->PrintMessage("Action: Undo");
+				break;
+
+		case REDO:
+				pOut->PrintMessage("Action: Redo");
+				break;
+
+		case CLEAR:
+				pOut->PrintMessage("Action: Clear");
+				break;
+
+		case STARTRECORDING:
+				pOut->PrintMessage("Action: Start Recording");
+				break;
+
+		case STOPRECORDING:
+				pOut->PrintMessage("Action: Stop Recording");
+				break;
+
+		case PLAYRECORDING:
+				pOut->PrintMessage("Action: Play the Record");
+				break;
+
+		case SAVE:
+				pOut->PrintMessage("Action: Save");
+				break;
+
+		case LOAD:
+				pOut->PrintMessage("Action: Load");
+				break;
 
 		case STATUS:
 				pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
@@ -294,23 +377,35 @@ int main()
 				pOut->PrintMessage("Action: a click on empty area in the Design Tool Bar, Click anywhere");
 				break;
 
-		case TO_DRAW:
-				pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar");
-				pOut->CreateDrawToolBar();
-				break;
-
 		case TO_PLAY:
 				pOut->PrintMessage("Action: Switch to Play Mode, creating Design tool bar");
 				pOut->CreatePlayToolBar();
 				break;
 
-
-		///TODO: Add more cases for the other action types
-
-
 		case EXIT:				
 				break;
+		case PICKANDHIDE:
+				pOut->PrintMessage("Action: Pick an object and hide the rest ");
+				break;
+		case PICKWITHTYPE:
+				pOut->PrintMessage("Action: Pick objects with same type and hide the rest ");
+				break;
+
+		case PICKWITHCOLOR:
+				pOut->PrintMessage("Action: Pick objects with same color and hide the rest ");
+				break;
+
+		case PICKWITHTYPEANDCOLOR:
+				pOut->PrintMessage("Action: Pick objects with same color and same type and hide the rest ");
+				break;
+
+		case TO_DRAW:
+				pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar");
+				pOut->CreateDrawToolBar();
+				break;
+
 		}
+
 	}while(ActType != EXIT);
 
 
