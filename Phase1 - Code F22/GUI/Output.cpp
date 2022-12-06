@@ -14,7 +14,7 @@ Output::Output()
 	
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 50;
-	UI.DrawMenuItemWidth = 50;
+	UI.DrawMenuItemWidth = 45;
 	UI.PlayMenuItemWidth = 80;
 	
 	UI.DrawColor = BLUE;	//Drawing color
@@ -86,6 +86,7 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_SQUARE] = "images\\MenuItems\\Menu_Square.jpg";
 	MenuItemImages[ITM_HEX] = "images\\MenuItems\\Menu_Hex.jpg";
 	MenuItemImages[ITM_CIR] = "images\\MenuItems\\Menu_Circ.jpg";
+	MenuItemImages[ITM_TRG] = "images\\MenuItems\\Menu_Triangle.jpg";
 	MenuItemImages[ITM_DCLR] = "images\\MenuItems\\Menu_Dcolor.jpg";
 	MenuItemImages[ITM_FCLR] = "images\\MenuItems\\Menu_Fcolor.jpg";
 	MenuItemImages[ITM_BLK] = "images\\MenuItems\\Menu_Black.jpg";

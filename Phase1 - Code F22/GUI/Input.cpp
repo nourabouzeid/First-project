@@ -51,11 +51,12 @@ ActionType Input::GetUserAction() const
 
 			switch (ClickedItemOrder)
 			{
+				case ITM_FIG:		return FIG;
 				case ITM_RECT:		return DRAW_RECT;
-				case ITM_SQUARE:		return DRAW_SQUARE;
+				case ITM_SQUARE:	return DRAW_SQUARE;
 				case ITM_HEX:		return DRAW_HEXA;
 				case ITM_CIR:		return DRAW_CIRCLE;
-				case Itm_TRG:		return DRAW_TRIANGLE;
+				case ITM_TRG:		return DRAW_TRIANGLE;
 				case ITM_DCLR:		return DRAW_COLOR;
 				case ITM_FCLR:		return FILL_COLOR;	
 				case ITM_BLK:		return BLACK_COLOR;

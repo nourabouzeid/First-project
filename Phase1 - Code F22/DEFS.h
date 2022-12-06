@@ -6,6 +6,7 @@
 //This file contains some global constants and definitions to be used in the project.
 enum ActionType //The actions supported (you can add more if needed)
 {
+	FIG,
 	DRAW_RECT,		//Draw Rectangle
 	DRAW_SQUARE,	//Draw Square
 	DRAW_HEXA,		//Draw Hexagon

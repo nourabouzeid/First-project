@@ -257,6 +257,10 @@ int main()
 	// 1- Read a string from the user on the status bar
 	// 2- After reading the string clear the status bar
 	// 3- print on the status bar "You Entered" then print the string
+	string Label="";
+	Label=pIn->GetSrting(pOut);
+	pOut->ClearStatusBar();
+	pOut->PrintMessage("you entered "+Label+", click anywhere to continue ");
 
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawArea();
@@ -278,9 +282,14 @@ int main()
 
 		switch (ActType)
 		{
+		case FIG:
+			pOut->PrintMessage("Action: Figure ,choose figure please");
+				break;
+
 		case DRAW_RECT:
 				pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
 				break;
+
 		case DRAW_SQUARE:
 				pOut->PrintMessage("Action: Draw a Square , Click on the centre ");
 				break;
@@ -302,27 +311,27 @@ int main()
 				pOut->PrintMessage("Action: choose the filling color");
 				break;
 		case BLACK_COLOR:
-				pOut->PrintMessage("Action: Color black has been chosen");
+				pOut->PrintMessage("Action: Color Black has been chosen");
 				break;
 
 		case YELLOW_COLOR:
-				pOut->PrintMessage("Action: Color yellow has been chosen");
+				pOut->PrintMessage("Action: Color Yellow has been chosen");
 				break;
 
 		case ORANGE_COLOR:
-				pOut->PrintMessage("Action: Color black has been chosen");
+				pOut->PrintMessage("Action: Color Orange has been chosen");
 				break;
 
 		case RED_COLOR:
-				pOut->PrintMessage("Action: Color black has been chosen");
+				pOut->PrintMessage("Action: Color Red has been chosen");
 				break;
 
 		case GREEN_COLOR:
-				pOut->PrintMessage("Action: Color black has been chosen");
+				pOut->PrintMessage("Action: Color Green has been chosen");
 				break;
 
 		case BLUE_COLOR:
-				pOut->PrintMessage("Action: Color black has been chosen");
+				pOut->PrintMessage("Action: Color Blue has been chosen");
 				break;
 
 		case MOVE:
