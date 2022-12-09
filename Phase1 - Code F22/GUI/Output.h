@@ -13,6 +13,9 @@ public:
 	void CreateDrawToolBar() const;	//creates Draw mode toolbar & menu
 	void CreatePlayToolBar() const;	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
+	void CreateFigureToolBar() const;	//create the Figure Tool bar
+	void CreateDrawColorToolBar() const;	//create the Draw color Tool bar
+	void CreateFillColorToolBar() const;	//create the Fill color Tool bar
 
 	Input* CreateInput() const; //creates a pointer to the Input object	
 	void ClearStatusBar() const;	//Clears the status bar

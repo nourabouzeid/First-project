@@ -260,7 +260,7 @@ int main()
 	string Label="";
 	Label=pIn->GetSrting(pOut);
 	pOut->ClearStatusBar();
-	pOut->PrintMessage("you entered "+Label+", click anywhere to continue ");
+	pOut->PrintMessage("you entered ("+Label+"), click anywhere to continue ");
 
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawArea();
@@ -283,7 +283,8 @@ int main()
 		switch (ActType)
 		{
 		case FIG:
-			pOut->PrintMessage("Action: Figure ,choose figure please");
+			pOut->PrintMessage("Action: Figures ,choose figure please");
+			pOut->CreateFigureToolBar();
 				break;
 
 		case DRAW_RECT:
@@ -306,9 +307,11 @@ int main()
 				break;
 		case DRAW_COLOR:
 				pOut->PrintMessage("Action: choose  the drawing color");
+				pOut->CreateDrawColorToolBar();
 				break;
 		case FILL_COLOR:
 				pOut->PrintMessage("Action: choose the filling color");
+				pOut->CreateFillColorToolBar();
 				break;
 		case BLACK_COLOR:
 				pOut->PrintMessage("Action: Color Black has been chosen");
@@ -393,19 +396,16 @@ int main()
 
 		case EXIT:				
 				break;
-		case PICKANDHIDE:
-				pOut->PrintMessage("Action: Pick an object and hide the rest ");
-				break;
 		case PICKWITHTYPE:
-				pOut->PrintMessage("Action: Pick objects with same type and hide the rest ");
+				pOut->PrintMessage("Action: Pick objects with same type  ");
 				break;
 
 		case PICKWITHCOLOR:
-				pOut->PrintMessage("Action: Pick objects with same color and hide the rest ");
+				pOut->PrintMessage("Action: Pick objects with same color  ");
 				break;
 
 		case PICKWITHTYPEANDCOLOR:
-				pOut->PrintMessage("Action: Pick objects with same color and same type and hide the rest ");
+				pOut->PrintMessage("Action: Pick objects with same color and same type  ");
 				break;
 
 		case TO_DRAW:

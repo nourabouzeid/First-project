@@ -10,7 +10,45 @@
 enum GUI_MODE	//Graphical user interface mode
 {
 	MODE_DRAW,	//Drawing mode (startup mode)
-	MODE_PLAY	//Playing mode
+	MODE_PLAY,  //Playing mode
+	MODE_FIG,    //FIGURE mode
+	MODE_DRAWCOLOR,   //DRAW COLOR mode
+	MODE_FILLCOLOR,     //FILL COLOR mode
+};
+
+enum FigureMenuItem
+{
+	ITM_RECT,//Recangle item in menu
+	ITM_SQUARE,
+	ITM_TRG,
+	ITM_HEX,
+	ITM_CIR,
+	ITM_SWTMD1,
+	FIGURE_ITM_COUNT
+};
+
+enum DrawColorMenuItem
+{
+	ITM_BLK1,
+	ITM_YEL1,
+	ITM_ORNG1,
+	ITM_RED1,
+	ITM_GRN1,
+	ITM_BLUE1,
+	ITM_SWTMD2,
+	DRAWCOLOR_ITM_COUNT
+};
+
+enum FillColorMenuItem
+{
+	ITM_BLK,
+	ITM_YEL,
+	ITM_ORNG,
+	ITM_RED,
+	ITM_GRN,
+	ITM_BLUE,
+	ITM_SWTMD3,
+	FILLCOLOR_ITM_COUNT
 };
 
 enum DrawMenuItem //The items of the Draw menu (you should add more items)
@@ -18,19 +56,8 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	//Note: Items are **(ordered)** here as they appear in menu
 	//If you want to change the menu items order, change the order here
 	ITM_FIG,
-	ITM_RECT,//Recangle item in menu
-	ITM_SQUARE,
-	ITM_HEX,
-	ITM_CIR,
-	ITM_TRG,
 	ITM_DCLR,
 	ITM_FCLR,
-	ITM_BLK,
-	ITM_YEL,
-	ITM_ORNG,
-	ITM_RED,
-	ITM_GRN,
-	ITM_BLUE,
 	ITM_MOVE,
 	ITM_SLCT,
 	ITM_UNDO,
@@ -55,7 +82,6 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 	//If you want to change the menu items order, change the order here
 	
 	//TODO: Add more items names here
-	ITM_PH,
 	ITM_PHT,
 	ITM_PHC,
 	ITM_PHB,

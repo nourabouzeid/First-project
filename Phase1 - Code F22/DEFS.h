@@ -36,7 +36,6 @@ enum ActionType //The actions supported (you can add more if needed)
 	EMPTY,			//A click on empty place in the toolbar
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,		//A click on the status bar
-	PICKANDHIDE,
 	PICKWITHTYPE,
 	PICKWITHCOLOR,
 	PICKWITHTYPEANDCOLOR
