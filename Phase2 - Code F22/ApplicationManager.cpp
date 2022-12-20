@@ -64,6 +64,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case FILL_COLOR:
 			pOut->CreateFillColorToolBar();
 			break;
+		case TO_PLAY:
+			pOut->CreatePlayToolBar();
+			break;
 
 		case EXIT:
 			///create ExitAction here
