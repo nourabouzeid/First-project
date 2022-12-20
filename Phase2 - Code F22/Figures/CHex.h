@@ -1,0 +1,10 @@
+#include "CFigure.h"
+
+class CHex : public CFigure
+{
+private:
+	Point midd;
+public:
+	CHex(Point, GfxInfo FigureGfxInfo);
+	virtual void Draw(Output* pOut) const;
+};

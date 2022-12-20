@@ -1,8 +1,1 @@
-﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  Output.cpp
-C:\Users\Mina3\OneDrive\Desktop\First-project\Phase1 - Code F22\GUI\Output.cpp(319,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Mina3\OneDrive\Desktop\First-project\Phase1 - Code F22\GUI\Output.cpp(321,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Mina3\OneDrive\Desktop\First-project\Phase1 - Code F22\GUI\Output.cpp(323,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Mina3\OneDrive\Desktop\First-project\Phase1 - Code F22\GUI\Output.cpp(348,10): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
-C:\Users\Mina3\OneDrive\Desktop\First-project\Phase1 - Code F22\GUI\Output.cpp(366,32): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
-  PT-Project.vcxproj -> C:\Users\Mina3\OneDrive\Desktop\First-project\Phase1 - Code F22\Debug\PT Project.exe
+﻿  PT-Project.vcxproj -> C:\Users\Mina3\OneDrive\Desktop\First-project\Phase1 - Code F22\Debug\PT Project.exe
