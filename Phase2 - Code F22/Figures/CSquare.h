@@ -8,4 +8,5 @@ private:
 public:
 	CSquare(Point, GfxInfo FigureGfxInfo);
 	virtual void Draw(Output* pOut) const;
+	bool isinside(Point p);
 };

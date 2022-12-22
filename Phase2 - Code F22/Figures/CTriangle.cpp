@@ -13,3 +13,8 @@ void CTriangle::Draw(Output* pOut) const
 	//Call Output::DrawRect to draw a rectangle on the screen	
 	pOut->Drawtriangle(Corner1, Corner2, Corner3 , FigGfxInfo, Selected);
 }
+
+bool CTriangle::isinside(Point p)
+{
+	return false;
+}

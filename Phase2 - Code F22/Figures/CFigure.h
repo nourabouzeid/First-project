@@ -3,6 +3,7 @@
 
 #include "..\defs.h"
 #include "..\GUI\Output.h"
+#include <cmath>
 
 //Base class for all figures
 class CFigure
@@ -19,6 +20,7 @@ public:
 
 	void SetSelected(bool s);	//select/unselect the figure
 	bool IsSelected() const;	//check whether fig is selected
+	virtual bool isinside(Point p) = 0 ;
 
 	virtual void Draw(Output* pOut) const  = 0 ;		//Draw the figure
 	

@@ -11,3 +11,8 @@ void CHex::Draw(Output* pOut) const
 	//Call Output::DrawRect to draw a rectangle on the screen	
 	pOut->DrawHexagon(midd, FigGfxInfo, Selected);
 }
+
+bool CHex::isinside(Point p)
+{
+	return false;
+}

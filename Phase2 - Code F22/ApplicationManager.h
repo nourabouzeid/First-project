@@ -12,7 +12,8 @@ class ApplicationManager
 	enum { MaxFigCount = 200 };	//Max no of figures
 
 private:
-	int FigCount;		//Actual number of figures
+	color c1;
+	int FigCount, f;		//Actual number of figures
 	CFigure* FigList[MaxFigCount];	//List of all figures (Array of pointers)
 
 	CFigure* SelectedFig; //Pointer to the selected figure
@@ -32,8 +33,13 @@ public:
 	
 	// -- Figures Management Functions
 	void AddFigure(CFigure* pFig);          //Adds a new figure to the FigList
-	CFigure *GetFigure(int x, int y) const; //Search for a figure given a point inside the figure
-		
+	CFigure* GetFigure(Point p) const; //Search for a figure given a point inside the figure
+	void setselectedfigure(Point p);
+	color getcolor();
+	void changeDC(color c);
+	void changeFC(color c);
+	void deleteallfigure();
+
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input
 	Output *GetOutput() const; //Return pointer to the output

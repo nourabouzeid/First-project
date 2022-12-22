@@ -4,6 +4,10 @@
 #include "Actions\AddTriangleAction.h"
 #include "Actions\AddCircleAction.h"
 #include "Actions\AddHexAction.h"
+#include "Actions\SelectAction.h"
+#include "Actions\DrawCAction.h"
+#include "Actions\FillCAction.h"
+#include "Actions\ClearAllAction.h"
 
 
 //Constructor
@@ -14,6 +18,7 @@ ApplicationManager::ApplicationManager()
 	pIn = pOut->CreateInput();
 	
 	FigCount = 0;
+	f = 0;
 		
 	//Create an array of figure pointers and set them to NULL		
 	for(int i=0; i<MaxFigCount; i++)
@@ -38,7 +43,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	switch (ActType)
 	{
 	   case FIG:
-		   pOut->CreateFigureToolBar();
+		   pOut->CreateFigureToolBar();     //need to change
 		   break;
 		case DRAW_RECT:
 			pAct = new AddRectAction(this);
@@ -55,19 +60,69 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case DRAW_TRIANGLE:
 			pAct = new AddTriangleAction(this);
 			break;
+		case SELECT:
+			pAct = new SelectAction(this);
+			break;
 		case TO_DRAW:
-			pOut->CreateDrawToolBar();
+			pOut->CreateDrawToolBar();    //need to change
 			break;
 		case DRAW_COLOR:
-			pOut->CreateDrawColorToolBar();
+			pOut->CreateDrawColorToolBar();     //need to change
+			f = 1;
 			break;
 		case FILL_COLOR:
-			pOut->CreateFillColorToolBar();
+			pOut->CreateFillColorToolBar();   //need to change
+			f = 2;
+			break;
+		case BLACK_COLOR:
+			c1 = BLACK;
+			if (f == 1)
+				pAct = new DrawCAction(this);
+			else if(f==2)
+				pAct = new FillCAction(this);
+			break;
+		case YELLOW_COLOR:
+			c1 = YELLOW;
+			if (f == 1)
+				pAct = new DrawCAction(this);
+			else if (f == 2)
+				pAct = new FillCAction(this);
+			break;
+		case ORANGE_COLOR:
+			c1 = ORANGE;
+			if (f == 1)
+				pAct = new DrawCAction(this);
+			else if (f == 2)
+				pAct = new FillCAction(this);
+			break;
+		case RED_COLOR:
+			c1 = RED;
+			if (f == 1)
+				pAct = new DrawCAction(this);
+			else if (f == 2)
+				pAct = new FillCAction(this);
+			break;
+		case GREEN_COLOR:
+			c1 = GREEN;
+			if (f == 1)
+				pAct = new DrawCAction(this);
+			else if (f == 2)
+				pAct = new FillCAction(this);
+			break;
+		case BLUE_COLOR:
+			c1 = BLUE;
+			if (f == 1)
+				pAct = new DrawCAction(this);
+			else if (f == 2)
+				pAct = new FillCAction(this);
 			break;
 		case TO_PLAY:
 			pOut->CreatePlayToolBar();
 			break;
 
+		case CLEAR:
+			pAct = new ClearAllAction(this);
+			break;
 		case EXIT:
 			///create ExitAction here
 			
@@ -89,6 +144,31 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 //						Figures Management Functions								//
 //==================================================================================//
 
+void ApplicationManager::deleteallfigure()
+{
+	for (int i = 0; i < FigCount; i++)
+	{
+		FigList[i]->SetSelected(false);
+		FigList[i] = NULL;
+	}
+	FigCount = 0;
+}
+
+color ApplicationManager::getcolor()
+{
+	return c1;
+}
+
+void ApplicationManager::changeDC(color c)
+{
+	SelectedFig->ChngDrawClr(c);
+}
+
+void ApplicationManager::changeFC(color c)
+{
+	SelectedFig->ChngFillClr(c);
+}
+
 //Add a figure to the list of figures
 void ApplicationManager::AddFigure(CFigure* pFig)
 {
@@ -96,8 +176,32 @@ void ApplicationManager::AddFigure(CFigure* pFig)
 		FigList[FigCount++] = pFig;	
 }
 ////////////////////////////////////////////////////////////////////////////////////
-CFigure *ApplicationManager::GetFigure(int x, int y) const
+void ApplicationManager::setselectedfigure(Point p)
 {
+	SelectedFig = GetFigure(p);
+}
+
+CFigure* ApplicationManager::GetFigure(Point p) const
+{
+	for (int i = FigCount-1; i>=0; i--)
+	{
+		if (FigList[i]->isinside(p))
+		{
+			if (FigList[i]->IsSelected())
+			{
+				FigList[i]->SetSelected(false);
+				break;
+			}
+			else
+			{
+				for(int j=0;j< FigCount; j++)
+					FigList[j]->SetSelected(false);
+				FigList[i]->SetSelected(true);
+				return FigList[i];
+			}
+		}
+	}
+
 	//If a figure is found return a pointer to it.
 	//if this point (x,y) does not belong to any figure return NULL
 

@@ -2,6 +2,7 @@
 #define ACTION_H
 
 #include "..\DefS.h"
+#include "..\Figures\CFigure.h"
 
 class ApplicationManager; //forward class declaration
 
@@ -10,7 +11,7 @@ class ApplicationManager; //forward class declaration
 class Action
 {
 protected:
-	ApplicationManager *pManager;	//Actions needs AppMngr to do their job
+	ApplicationManager* pManager;	//Actions needs AppMngr to do their job
 
 public:
 
