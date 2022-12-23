@@ -21,7 +21,7 @@ ApplicationManager::ApplicationManager()
 	//Create Input and output
 	pOut = new Output;
 	pIn = pOut->CreateInput();
-	
+	SelectedFig = NULL;
 	FigCount = 0;
 	f = 0;
 		
@@ -153,25 +153,16 @@ void ApplicationManager::deleteallfigure()
 {
 	for (int i = 0; i < FigCount; i++)
 	{
-		FigList[i]->SetSelected(false);
+		delete FigList[i];
 		FigList[i] = NULL;
 	}
 	FigCount = 0;
+	SelectedFig = NULL;
 }
 
 color ApplicationManager::getcolor()
 {
 	return c1;
-}
-
-void ApplicationManager::changeDC(color c)
-{
-	SelectedFig->ChngDrawClr(c);
-}
-
-void ApplicationManager::changeFC(color c)
-{
-	SelectedFig->ChngFillClr(c);
 }
 
 //Add a figure to the list of figures
@@ -181,9 +172,14 @@ void ApplicationManager::AddFigure(CFigure* pFig)
 		FigList[FigCount++] = pFig;	
 }
 ////////////////////////////////////////////////////////////////////////////////////
-void ApplicationManager::setselectedfigure(Point p)
+void ApplicationManager::setselectedfigure(CFigure* cf)
 {
-	SelectedFig = GetFigure(p);
+	SelectedFig = cf;
+}
+
+CFigure* ApplicationManager::getselectedfigure()
+{
+	return SelectedFig;
 }
 
 CFigure* ApplicationManager::GetFigure(Point p) const
@@ -192,28 +188,9 @@ CFigure* ApplicationManager::GetFigure(Point p) const
 	{
 		if (FigList[i]->isinside(p))
 		{
-			if (FigList[i]->IsSelected())
-			{
-				FigList[i]->SetSelected(false);
-				break;
-			}
-			else
-			{
-				for(int j=0;j< FigCount; j++)
-					FigList[j]->SetSelected(false);
-				FigList[i]->SetSelected(true);
-				return FigList[i];
-			}
+			return FigList[i];
 		}
 	}
-
-	//If a figure is found return a pointer to it.
-	//if this point (x,y) does not belong to any figure return NULL
-
-
-	//Add your code here to search for a figure given a point x,y	
-	//Remember that ApplicationManager only calls functions do NOT implement it.
-
 	return NULL;
 }
 //==================================================================================//

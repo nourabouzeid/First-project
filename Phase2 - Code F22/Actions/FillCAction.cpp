@@ -9,14 +9,12 @@ FillCAction::FillCAction(ApplicationManager* pApp) :Action(pApp)
 
 
 void FillCAction::ReadActionParameters()
-{
-	c = pManager->getcolor();
-	Output* pOut = pManager->GetOutput();
-	pOut->PrintMessage("please Click inside a figure");
-}
+{}
 
 void FillCAction::Execute()
 {
-	ReadActionParameters();
-	pManager->changeFC(c);
+	CFigure* cf1;
+	c = pManager->getcolor();
+	cf1 = pManager->getselectedfigure();
+	cf1->ChngFillClr(c);
 }

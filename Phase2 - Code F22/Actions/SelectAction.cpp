@@ -22,8 +22,23 @@ void SelectAction::ReadActionParameters()
 
 void SelectAction::Execute()
 {
-
+	CFigure* cf1;
+	CFigure* cf2;
 	ReadActionParameters();
-	pManager->setselectedfigure(p);
-
+	cf2= pManager->getselectedfigure();
+	cf1= pManager->GetFigure(p);
+	if (cf1)
+	{
+		if (cf1->IsSelected())
+		{
+			cf1->SetSelected(false);
+		}
+		else
+		{
+			if(cf2)
+			cf2->SetSelected(false);
+			cf1->SetSelected(true);
+			pManager->setselectedfigure(cf1);
+		}
+	}
 }

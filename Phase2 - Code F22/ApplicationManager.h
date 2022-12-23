@@ -34,11 +34,10 @@ public:
 	// -- Figures Management Functions
 	void AddFigure(CFigure* pFig);          //Adds a new figure to the FigList
 	CFigure* GetFigure(Point p) const; //Search for a figure given a point inside the figure
-	void setselectedfigure(Point p);
+	void setselectedfigure(CFigure* cf);
 	color getcolor();
-	void changeDC(color c);
-	void changeFC(color c);
 	void deleteallfigure();
+	CFigure* getselectedfigure();
 
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input

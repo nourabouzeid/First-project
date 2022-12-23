@@ -10,13 +10,12 @@ DrawCAction::DrawCAction(ApplicationManager* pApp) :Action(pApp)
 
 void DrawCAction::ReadActionParameters()
 {
-	c=pManager->getcolor();
-	Output* pOut = pManager->GetOutput();
-	pOut->PrintMessage("please Click inside a figure");
 }
 
 void DrawCAction::Execute()
 {
-	ReadActionParameters();
-	pManager->changeDC(c);
+	CFigure* cf1;
+	c = pManager->getcolor();
+	cf1=pManager->getselectedfigure();
+	cf1->ChngDrawClr(c);
 }
