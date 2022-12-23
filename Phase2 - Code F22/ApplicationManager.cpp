@@ -8,6 +8,11 @@
 #include "Actions\DrawCAction.h"
 #include "Actions\FillCAction.h"
 #include "Actions\ClearAllAction.h"
+#include "Actions\CreatDAction.h"
+#include "Actions\CreatFAction.h"
+#include "Actions\CreateDToolbarAction.h"
+#include "Actions\CreatePToolbarAction.h"
+#include "Actions\CreatFigureAction.h"
 
 
 //Constructor
@@ -43,7 +48,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	switch (ActType)
 	{
 	   case FIG:
-		   pOut->CreateFigureToolBar();     //need to change
+		   pAct = new CreatFigureAction(this);  
 		   break;
 		case DRAW_RECT:
 			pAct = new AddRectAction(this);
@@ -64,14 +69,14 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new SelectAction(this);
 			break;
 		case TO_DRAW:
-			pOut->CreateDrawToolBar();    //need to change
+			pAct = new CreateDToolbarAction(this);
 			break;
 		case DRAW_COLOR:
-			pOut->CreateDrawColorToolBar();     //need to change
+			pAct = new CreatDAction(this);
 			f = 1;
 			break;
 		case FILL_COLOR:
-			pOut->CreateFillColorToolBar();   //need to change
+			pAct = new CreatFAction(this);
 			f = 2;
 			break;
 		case BLACK_COLOR:
@@ -117,7 +122,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 				pAct = new FillCAction(this);
 			break;
 		case TO_PLAY:
-			pOut->CreatePlayToolBar();
+			pAct = new CreatePToolbarAction(this);
 			break;
 
 		case CLEAR:

@@ -133,6 +133,11 @@
     <ClCompile Include="Actions\AddSqrAction.cpp" />
     <ClCompile Include="Actions\AddTriangleAction.cpp" />
     <ClCompile Include="Actions\ClearAllAction.cpp" />
+    <ClCompile Include="Actions\CreatDAction.cpp" />
+    <ClCompile Include="Actions\CreateDToolbarAction.cpp" />
+    <ClCompile Include="Actions\CreatePToolbarAction.cpp" />
+    <ClCompile Include="Actions\CreatFAction.cpp" />
+    <ClCompile Include="Actions\CreatFigureAction.cpp" />
     <ClCompile Include="Actions\DrawCAction.cpp" />
     <ClCompile Include="Actions\FillCAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
@@ -190,6 +195,11 @@
     <ClInclude Include="Actions\AddSqrAction.h" />
     <ClInclude Include="Actions\AddTriangleAction.h" />
     <ClInclude Include="Actions\ClearAllAction.h" />
+    <ClInclude Include="Actions\CreatDAction.h" />
+    <ClInclude Include="Actions\CreateDToolbarAction.h" />
+    <ClInclude Include="Actions\CreatePToolbarAction.h" />
+    <ClInclude Include="Actions\CreatFAction.h" />
+    <ClInclude Include="Actions\CreatFigureAction.h" />
     <ClInclude Include="Actions\DrawCAction.h" />
     <ClInclude Include="Actions\FillCAction.h" />
     <ClInclude Include="Actions\SelectAction.h" />
