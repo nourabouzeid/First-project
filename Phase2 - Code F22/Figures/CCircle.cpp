@@ -23,3 +23,8 @@ bool CCircle::isinside(Point p)
 	else
 		return false;
 }
+
+void CCircle::move(Point p1)
+{
+	midd = p1;
+}

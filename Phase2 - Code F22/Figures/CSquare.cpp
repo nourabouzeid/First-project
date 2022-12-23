@@ -30,3 +30,8 @@ bool CSquare::isinside(Point p)
 	}
 	else return false;
 }
+
+void CSquare::move(Point p1)
+{
+	midd = p1;
+}

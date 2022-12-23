@@ -38,6 +38,8 @@ public:
 	color getcolor();
 	void deleteallfigure();
 	CFigure* getselectedfigure();
+	void deletefigure(CFigure* cf1);
+	void MOVEE(Point p) const;
 
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input

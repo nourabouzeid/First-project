@@ -21,7 +21,8 @@ enum ActionType //The actions supported (you can add more if needed)
 	GREEN_COLOR,	//green Color
 	BLUE_COLOR,		//blue Color
 	MOVE,			//move item
-	SELECT,			//select item
+	SELECT,         //select item
+	DELET,
 	UNDO,			//undo
 	REDO,			//redo
 	CLEAR,			//clear draw

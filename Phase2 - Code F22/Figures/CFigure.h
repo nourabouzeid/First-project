@@ -21,8 +21,9 @@ public:
 	void SetSelected(bool s);	//select/unselect the figure
 	bool IsSelected() const;	//check whether fig is selected
 	virtual bool isinside(Point p) = 0 ;
+	virtual void move(Point p1) = 0;         //move figure 
 
-	virtual void Draw(Output* pOut) const  = 0 ;		//Draw the figure
+	virtual void Draw(Output* pOut) const  = 0 ;   //Draw the figure
 	
 	void ChngDrawClr(color Dclr);	//changes the figure's drawing color
 	void ChngFillClr(color Fclr);	//changes the figure's filling color

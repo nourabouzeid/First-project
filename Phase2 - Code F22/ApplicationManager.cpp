@@ -13,6 +13,8 @@
 #include "Actions\CreateDToolbarAction.h"
 #include "Actions\CreatePToolbarAction.h"
 #include "Actions\CreatFigureAction.h"
+#include "Actions\DeleteFigureAction.h"
+#include "Actions\MoveAction.h"
 
 
 //Constructor
@@ -124,10 +126,14 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case TO_PLAY:
 			pAct = new CreatePToolbarAction(this);
 			break;
-
+		case MOVE:
+			pAct = new MoveAction(this);
+			break;
 		case CLEAR:
 			pAct = new ClearAllAction(this);
 			break;
+		case DELET:
+			pAct = new DeleteFigureAction(this);
 		case EXIT:
 			///create ExitAction here
 			
@@ -160,9 +166,36 @@ void ApplicationManager::deleteallfigure()
 	SelectedFig = NULL;
 }
 
+void ApplicationManager::deletefigure(CFigure* cf1)
+{
+	CFigure* temp;
+	for (int i = 0; i < FigCount; i++)
+	{
+		if (FigList[i] == cf1 && i < (FigCount-1))
+		{
+			temp = FigList[i];
+			FigList[i] = FigList[i + 1];
+			FigList[i + 1] = temp;
+		}
+		if (FigList[i] == cf1 && i == (FigCount - 1))
+		{
+			delete FigList[i];
+			FigList[i] = NULL;
+			FigCount = FigCount - 1;
+			SelectedFig = NULL;
+		}
+	}
+}
+
 color ApplicationManager::getcolor()
 {
 	return c1;
+}
+
+void ApplicationManager::MOVEE(Point p) const
+{
+	if(SelectedFig!=NULL)
+	SelectedFig->move(p);
 }
 
 //Add a figure to the list of figures

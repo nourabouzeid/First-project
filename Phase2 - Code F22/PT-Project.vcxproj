@@ -138,8 +138,10 @@
     <ClCompile Include="Actions\CreatePToolbarAction.cpp" />
     <ClCompile Include="Actions\CreatFAction.cpp" />
     <ClCompile Include="Actions\CreatFigureAction.cpp" />
+    <ClCompile Include="Actions\DeleteFigureAction.cpp" />
     <ClCompile Include="Actions\DrawCAction.cpp" />
     <ClCompile Include="Actions\FillCAction.cpp" />
+    <ClCompile Include="Actions\MoveAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
@@ -200,8 +202,10 @@
     <ClInclude Include="Actions\CreatePToolbarAction.h" />
     <ClInclude Include="Actions\CreatFAction.h" />
     <ClInclude Include="Actions\CreatFigureAction.h" />
+    <ClInclude Include="Actions\DeleteFigureAction.h" />
     <ClInclude Include="Actions\DrawCAction.h" />
     <ClInclude Include="Actions\FillCAction.h" />
+    <ClInclude Include="Actions\MoveAction.h" />
     <ClInclude Include="Actions\SelectAction.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />

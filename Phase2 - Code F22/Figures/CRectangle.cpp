@@ -26,3 +26,17 @@ bool CRectangle::isinside(Point p)
 	}
 	else return false;
 }
+
+void CRectangle::move(Point p1)
+{
+	Point midd1;
+	midd1.x = ((Corner1.x+Corner2.x)/2);
+	midd1.y = ((Corner1.y + Corner2.y) / 2);
+	int xlen, ylen;
+	xlen = (p1.x - midd1.x);
+	ylen = (p1.y - midd1.y);
+	Corner1.x += xlen;
+	Corner1.y += ylen;
+	Corner2.x += xlen;
+	Corner2.y += ylen;
+}

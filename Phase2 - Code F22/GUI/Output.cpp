@@ -14,8 +14,8 @@ Output::Output()
 	
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 50;
-	UI.DrawMenuItemWidth = 80;
-	UI.PlayMenuItemWidth = 80;
+	UI.DrawMenuItemWidth = 75;
+	UI.PlayMenuItemWidth = 75;
 	
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
@@ -90,6 +90,7 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\Menu_Undo.jpg";
 	MenuItemImages[ITM_REDO] = "images\\MenuItems\\Menu_Redo.jpg";
 	MenuItemImages[ITM_CLEAR] = "images\\MenuItems\\Menu_Clear.jpg";
+	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\Menu_delete.jpg";
 	MenuItemImages[ITM_STARTREC] = "images\\MenuItems\\Menu_Srec.jpg";
 	MenuItemImages[ITM_STOPREC] = "images\\MenuItems\\Menu_SPrec.jpg";
 	MenuItemImages[ITM_PLAYREC] = "images\\MenuItems\\Menu_Prec.jpg";
@@ -207,7 +208,8 @@ void Output::ClearDrawArea() const
 	pWind->SetPen(UI.BkGrndColor, 3);
 	pWind->SetBrush(UI.BkGrndColor);
 	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
-	
+	pWind->SetPen(BLACK, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 void Output::ClearToolBar() const

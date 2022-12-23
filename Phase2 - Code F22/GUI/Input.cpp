@@ -59,6 +59,7 @@ ActionType Input::GetUserAction() const
 				case ITM_UNDO:		return UNDO;
 				case ITM_REDO:		return REDO;
 				case ITM_CLEAR:		return CLEAR;
+				case ITM_DELETE:	return DELET;
 				case ITM_STARTREC:	return STARTRECORDING;
 				case ITM_STOPREC:	return STOPRECORDING;
 				case ITM_PLAYREC:	return PLAYRECORDING;
