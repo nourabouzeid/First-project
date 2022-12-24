@@ -26,5 +26,9 @@ bool CCircle::isinside(Point p)
 
 void CCircle::move(Point p1)
 {
+	long long int w;
+	w = sqrt(pow((radius.x - midd.x), 2) + pow((radius.y - midd.y), 2));
 	midd = p1;
+	radius.x = midd.x + w;
+	radius.y = midd.y;
 }
