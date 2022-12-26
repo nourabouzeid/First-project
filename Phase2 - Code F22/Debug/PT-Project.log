@@ -1,7 +1,0 @@
-﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  CCircle.cpp
-E:\gm3a\project phase 2\Phase2 - Code F22\Figures\CCircle.cpp(19,11): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
-E:\gm3a\project phase 2\Phase2 - Code F22\Figures\CCircle.cpp(20,11): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
-E:\gm3a\project phase 2\Phase2 - Code F22\Figures\CCircle.cpp(30,10): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
-E:\gm3a\project phase 2\Phase2 - Code F22\Figures\CCircle.cpp(32,20): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-  PT-Project.vcxproj -> E:\gm3a\project phase 2\Phase2 - Code F22\Debug\PT Project.exe
